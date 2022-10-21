@@ -18,7 +18,7 @@ var Bar = {
 }
 
 Bar.progress = 10
-const answers = require('./answers/lesson_1.json'); 
+const answers = require('../answers/lesson_1.json'); 
 
 console.log(answers)
 

@@ -1,0 +1,89 @@
+{
+    "comment": [
+        "This is the naming convention file explication thing!",
+        "Use this file to explain the file structure and names",
+        "Everyone can and should contribute to this file :)",
+
+        "I hate vscode (doesn't allow // comments)",
+        "I used json to be able to use arrays and did not use yml because not many people know it",
+        "How 2 json (you will need it for javascript anyways): https://www.youtube.com/watch?v=iiADhChRriM"
+    ],
+    "naming conventions": {
+        "general": "lowerCamelCase (is best 👍)",
+        "file": "snake_case (file names are not case sensitive)",
+        "html-file": "dash-case (no other choice)",
+        "naming system.json": "regular spaces (English!)"
+    },
+    "conventions for this file": {
+        "/foo": "a file",
+        "bar/": "a folder",
+        "baz": "none of the above",
+        "/file_1.txt...": "Like a list of files that have predictable names",
+        "Html/Css/Javascript short form": "DTML (up for debate) http://en.wikipedia.org/wiki/DHTML",
+        "comment": "https://stackoverflow.com/questions/34212049/meaning-of-foo-bar-baz-etc"
+
+    },
+
+    "files": {
+        "answers/": {
+            "explanation": "The folder to store the answers to the questions in the quiz",
+            "naming": "Refer to the guide",
+            
+            "/guide.txt": "the guide",
+            "/lesson_1.json...": "A collection of files that contain the answers used in the quiz"
+        },
+        "assets/": {
+            "explanation": "The folder to store assets",
+
+            "images/": "The folder to store images",
+            "other folders": "Self explanatory. Note: If you want to make a folder for a specific file type, you can"
+        },
+        
+        "css/": {
+            "explanation": "The css part of DHTML",
+
+            "lesson/": {
+                "/base.css": "The base css file that every lesson uses",
+                "1.css...": "The css file used for each respective lesson. Note: Not every lesson needs a custom css file, these files could be useless"
+            }
+            
+        },
+        "js": {
+            "explanation": "The js part of DHTML",
+            "helper/": {
+                "explanation": "I have no idea, require.js asked me to do this -Alex",
+                "/util.js": "No idea, utility file?"
+            },
+            "lesson/": {
+                "/base.js": "The base js file that every lesson uses",
+                "/1.js": "The js file used for each respective lesson. Note: Not every lesson needs a custom js file, these files could be useless"
+            },
+
+            "/require.js": "To add the require function, still not sure on how to do it -Alex"
+
+        },
+        "lesson": {
+            "explanation": "The html part of DHTML",
+            "/fancy names.html...": "The files for the lesson"
+        },
+
+        "/index.html": "T h e f i r s t",
+        "quiz.html": "The quiz html file, will read the answers/lesson_x to ask questions",
+        "/naming system.json": "Hey, look at me, Ma!",
+        "/readme.md": "Haha funny message"
+        
+
+
+        
+    }
+        
+
+
+
+    
+
+
+
+
+
+}
