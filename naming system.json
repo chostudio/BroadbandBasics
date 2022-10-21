@@ -69,21 +69,9 @@
 
         "/index.html": "T h e f i r s t",
         "quiz.html": "The quiz html file, will read the answers/lesson_x to ask questions",
-        "/naming system.json": "Hey, look at me, Ma!",
+        "/naming system.json": "Hey, look at me, Ma! (we don't talk about how it conflicts with the file naming rule)",
         "/readme.md": "Haha funny message"
         
-
-
         
     }
-        
-
-
-
-    
-
-
-
-
-
 }
