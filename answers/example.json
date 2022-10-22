@@ -1,0 +1,22 @@
+{
+    "0": {
+        "name": "click the cheese",
+        "description": "description",
+        "options": {
+            "Bacon": false,
+            "Bread": false,
+            "Milk": false,
+            "Cheese": true
+        }  
+    },
+    "1": {
+        "name": "click yes",
+        "description": "description again",
+        "options": {
+            "Nope": false,
+            "No": false,
+            "I refuse": false,
+            "Yes": true
+        }  
+    }
+}

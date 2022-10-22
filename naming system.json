@@ -49,11 +49,15 @@
             
         },
         "js": {
-            "explanation": "The js part of DHTML",
-            "helper/": {
-                "explanation": "I have no idea, require.js asked me to do this -Alex",
-                "/util.js": "No idea, utility file?"
-            },
+            "explanation": "The js part of DHTML NOTE: Please use \"use strict\" https://javascript.info/strict-mode",
+            "utils/": [
+                "The utility file for globally used functions",
+                "To use this utility file, do",
+                "import * as Utilities from './utils.js';",
+                "const Utils = Utilities.default",
+                "TODO FIND BETTER WAY TO DO THIS",
+                "NOTE: it has to be a module to import"
+            ],
             "lesson/": {
                 "/base.js": "The base js file that every lesson uses",
                 "/1.js": "The js file used for each respective lesson. Note: Not every lesson needs a custom js file, these files could be useless"

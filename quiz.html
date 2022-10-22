@@ -5,18 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BroadbandBasics Quiz</title>
-    <link rel="stylesheet" href="/quiz.css">
-    <script data-main="/quiz.js" src="js/require.js"></script>
+    <link rel="stylesheet" href="/css/quiz.css">
+
 </head>
 <body>
-
-    <script src="/js/quiz.js" defer></script>
-    <script type="/text/javascript" src="/answers/lesson_1.json" defer> </script>
     
-    <button onclick="selectAnswer(0)">option 1</button>
-    <button onclick="selectAnswer(1)">option 2</button>
-    <button onclick="selectAnswer(2)">option 3</button>
-    <button onclick="selectAnswer(3)">option 4</button>
+    <!-- Would really fancy some styling here
+    Also, find a better tag that is not h1 so the search engine can easily identify stuff
+    Find better default text-->
+    <h1 id="question">The Quiz</h1>
+    <p id="questionDescription">Description</p>
+
+    <script src="/js/quiz.js" type="module"></script>
+    <script type="/text/javascript" src="/answers/lesson_1.json" defer> </script>
+
+    <button class="answerChoice" id="answerChoice0">option 1</button>
+    <button class="answerChoice" id="answerChoice1">option 2</button>
+    <button class="answerChoice" id="answerChoice2">option 3</button>
+    <button class="answerChoice" id="answerChoice3">option 4</button>
+    
 
 
     <div id="progressBarBackground">
