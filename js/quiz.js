@@ -1,5 +1,6 @@
 "use strict";
 import * as Utilities from './utils.js';
+//NOTE: Does not work in internet explorer
 const Utils = Utilities.default
 var Bar = {
     element: document.getElementById("progressBar"),
@@ -19,44 +20,35 @@ var Bar = {
 
 }
 async function fetchAnswers(id) {
-    //TODO Fix this please
     try {
-        const response = await fetch(`./answers/lesson_${id}.json`);
+        const response = await fetch(`../answers/lesson_${id}.json`);
         const exam = await response.json();
-        return exam;    
+        return exam;
     } catch (error) {
-        console.error(error);
+        //TODO maybe check for the error type (404)
+        window.location = "/page-not-found.html";
     }
 }
 
-const answers = {
-    "0": {
-        "name": "click the cheese",
-        "description": "description",
-        "options": {
-            "Bacon": false,
-            "Bread": false,
-            "Milk": false,
-            "Cheese": true
-        }  
-    },
-    "1": {
-        "name": "click yes",
-        "description": "description again",
-        "options": {
-            "Nope": false,
-            "No": false,
-            "I refuse": false,
-            "Yes": true
-        }  
-    }
-}
+
 //init variables
 var selectedAnswers = []
 var options;
-var questions = Object.keys(answers).length;
+
 var amountToUpdate = 100 / questions
 var currentQuestionNum = 0;
+const urlParams = new URLSearchParams(window.location.search);
+
+const quizNumber = urlParams.get("quiz");
+if (quizNumber === null) {
+    window.location = "/page-not-found.html";
+}
+var answers;
+
+answers = await fetchAnswers(quizNumber);
+
+
+var questions = Object.keys(answers).length;
 
 //init functions
 function update(questionNum) {
@@ -66,12 +58,18 @@ function update(questionNum) {
     Utils.shuffle(options);
     console.log(options);
 
-
     Array.from(document.getElementsByClassName('answerChoice')).forEach(element => {
-        //TODO find a less stupid solution
-        Utils.replaceButtonText(element, options[element.id.substring(12)])
-        //for the sake of D R Y
-        element.disabled = false;
+        //TODO find a less stupid solution for getting the id of the button
+        let elementContents = options[element.id.substring(12)];
+        if (elementContents === undefined) {
+            element.style.visibility = "hidden";
+            element.disabled = true;
+        } else {
+            Utils.replaceButtonText(element, elementContents)
+            element.style.visibility = "visible";
+            //for the sake of D R Y
+            element.disabled = false;
+        }
     });
 
 }
