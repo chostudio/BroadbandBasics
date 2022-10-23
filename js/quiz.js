@@ -3,16 +3,23 @@ import * as Utilities from './utils.js';
 const Utils = Utilities.default
 var Bar = {
     element: document.getElementById("progressBar"),
-
+    //TODO something smells broken :/
     set progress(value) {
         this.element.style.width = value + "%";
     },
-    get progress() {
+    set progressPercent(value) {
+        this.element.style.width = value;
+    },
+    get progressPercent() {
         return this.element.style.width
     },
+    get progress() {
+        return this.element.style.width.slice(0, -1)
+    }
 
 }
 async function fetchAnswers(id) {
+    //TODO Fix this please
     try {
         const response = await fetch(`./answers/lesson_${id}.json`);
         const exam = await response.json();
@@ -70,6 +77,7 @@ function update(questionNum) {
 }
 update(0)
 
+//TODO Loop?
 registerAnswerChoiceButton(0);
 registerAnswerChoiceButton(1);
 registerAnswerChoiceButton(2);
@@ -98,7 +106,8 @@ function selectAnswer(event) {
         console.log("incorrect!")
     }
     
-    Bar.progress += amountToUpdate;
+    Bar.progress = (currentQuestionNum + 1) * amountToUpdate;
+    
     selectedAnswers.push(selectedOption);
 
     if (currentQuestionNum + 1 === questions) {
