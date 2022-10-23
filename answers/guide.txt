@@ -11,7 +11,7 @@ Simple!
 Example:
 {
     "1": {
-        "name": "Correct?",
+        "question": "Correct?",
         options: {
             "incorrect 1": false,
             "incorrect 2": false,

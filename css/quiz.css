@@ -1,12 +1,13 @@
 #progressBarBackground {
-  width: 100%;
-  background-color: lightgreen;
-  border-radius: 50px;
+    width: 100%;
+    background-color: lightgreen;
+    border-radius: 50px;
 }
 
 #progressBar {
-  width: 1%;
-  height: 30px;
-  background-color: green;
-  border-radius: 50px;
+    width: 1%;
+    height: 30px;
+    background-color: green;
+    border-radius: 50px;
+
 }

@@ -10,7 +10,7 @@ class Utils {
             currentIndex--;
             // And swap it with the current element.
             [array[currentIndex], array[randomIndex]] = [
-              array[randomIndex], array[currentIndex]];
+                array[randomIndex], array[currentIndex]];
         }
     
         return array;
@@ -20,13 +20,13 @@ class Utils {
           var button=document.getElementById(buttonId);
           if (button) {
             if (button.childNodes[0]) {
-              button.childNodes[0].nodeValue=text;
+                button.childNodes[0].nodeValue=text;
             }
             else if (button.value) {
-              button.value=text;
+                button.value=text;
             }
             else if (button.innerHTML) {
-              button.innerHTML=text;
+                button.innerHTML=text;
             }
           }
         }
@@ -34,13 +34,13 @@ class Utils {
     static replaceButtonText(button, text) {
         if (button) {
             if (button.childNodes[0]) {
-              button.childNodes[0].nodeValue=text;
+                button.childNodes[0].nodeValue=text;
             }
             else if (button.value) {
-              button.value=text;
+                button.value=text;
             }
             else if (button.innerHTML) {
-              button.innerHTML=text;
+                button.innerHTML=text;
             }
         }
     }
