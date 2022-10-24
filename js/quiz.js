@@ -4,7 +4,7 @@ import * as Utilities from './utils.js'
 const Utils = Utilities.default
 var Bar = {
     element: document.getElementById("progressBar"),
-    //TODO something smells broken :/
+    
     set progress(value) {
         this.element.style.width = value + "%"
     },
@@ -19,6 +19,7 @@ var Bar = {
     }
 
 }
+
 async function fetchAnswers(id) {
     try {
         const response = await fetch(`../answers/lesson_${id}.json`)
@@ -32,9 +33,8 @@ async function fetchAnswers(id) {
 
 //init variables
 var selectedAnswers = []
-var options
+var options = []
 
-var amountToUpdate = 100 / questions
 var currentQuestionNum = 0
 const urlParams = new URLSearchParams(window.location.search)
 const question = document.getElementById("question")
@@ -43,19 +43,17 @@ const quizNumber = urlParams.get("quiz")
 if (quizNumber === null) {
     window.location = "/page-not-found.html"
 }
-var answers
-answers = await fetchAnswers(quizNumber)
+var answers = await fetchAnswers(quizNumber)
 var questions = Object.keys(answers).length
-console.log(questions)
+var amountToUpdate = 100 / questions
+
 //init functions
 function update(questionNum) {
-    console.log(questionNum)
-    currentQuestionNum = questionNum
+    currentQuestionNum = questionNum        
     options = Object.keys(answers[currentQuestionNum.toString()]['options'])
     Utils.shuffle(options)
-    console.log(options)
+    console.log(`Question ${questionNum} with options`, options)
     question.textContent = answers[currentQuestionNum]['question']
-
 
     Array.from(document.getElementsByClassName('answerChoice')).forEach(element => {
         //TODO find a less stupid solution for getting the id of the button
@@ -71,6 +69,11 @@ function update(questionNum) {
         }
     })
 
+    if (Bar.progress === "") 
+        Bar.element.style.display = "none"
+    else
+        Bar.element.style.display = "block"
+        
 }
 update(0)
 
@@ -86,6 +89,7 @@ function registerAnswerChoiceButton(number) {
     button.number = number
 
 }
+
 function selectAnswer(event) {
     let selectedOption = options[event.currentTarget.number]
 
@@ -102,7 +106,7 @@ function selectAnswer(event) {
         //TODO display incorrect answer animation
         console.log("incorrect!")
     }
-    
+    //TODO make animation
     Bar.progress = (currentQuestionNum + 1) * amountToUpdate
     selectedAnswers.push(selectedOption)
 
@@ -111,11 +115,11 @@ function selectAnswer(event) {
         console.log("FINISHED")
         //TODO display answers
         console.log(selectedAnswers)
+        //TODO exit
         return
     } 
 
     update(currentQuestionNum + 1)
-
-
+    
 }
 

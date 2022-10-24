@@ -9,8 +9,8 @@ Simple!
 }
 
 Example:
-{
-    "1": {
+[
+    {
         "question": "Correct?",
         options: {
             "incorrect 1": false,
@@ -19,7 +19,7 @@ Example:
             "correct": true
         }
     }
-}
+]
 
 
 JSON tutorial btw (will need in javascript): https://www.youtube.com/watch?v=iiADhChRriM
