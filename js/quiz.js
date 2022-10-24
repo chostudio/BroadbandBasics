@@ -51,7 +51,11 @@ var amountToUpdate = 100 / questions
 function update(questionNum) {
     currentQuestionNum = questionNum        
     options = Object.keys(answers[currentQuestionNum.toString()]['options'])
-    Utils.shuffle(options)
+    let randomize = answers[currentQuestionNum]['randomize']
+    //randomize default value is true
+    if (randomize === undefined || randomize)
+        Utils.shuffle(options)
+    
     console.log(`Question ${questionNum} with options`, options)
     question.textContent = answers[currentQuestionNum]['question']
 
