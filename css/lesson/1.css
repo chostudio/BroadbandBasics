@@ -1,0 +1,123 @@
+/* aarons code*/
+
+#overlay {
+
+    height: 100%;
+
+    width: 100%;
+
+    background-color: rgb(51, 204, 51, 0.5);
+
+}
+
+#button {
+
+    background-color: white;
+
+}
+
+#words {
+
+    background-color: white;
+
+    display: none;
+
+    width: 150px;
+
+    height: 150px;
+
+    position: absolute;
+
+    right: 500px;
+
+    top: 500px
+}
+
+
+/* treys code*/
+
+
+div.abcd {
+    width: 80%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    margin-top: 0px;
+    margin: auto;
+
+
+
+}
+
+div.aOption {
+    width: 500px;
+    height: 200px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+div.bOption {
+    width: 500px;
+    height: 200px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    margin-top: 25px;
+
+}
+
+div.cOption {
+    width: 500px;
+    height: 200px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    margin-top: 25px;
+
+}
+
+div.dOption {
+    width: 500px;
+    height: 200px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+button {
+    height: 100%;
+    width: 100%;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 20px;
+    font-family: 'Quantico', sans-serif;
+
+}
+
+
+
+button.abox {
+    border: solid rgb(255, 173, 173) 10px;
+
+}
+
+button.bbox {
+    border: solid rgb(82, 113, 255) 10px;
+}
+
+button.cbox {
+    border: solid rgb(255, 172, 120) 10px;
+}
+
+button.dbox {
+    border: solid rgb(255, 222, 89) 10px;
+}
