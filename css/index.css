@@ -1,0 +1,54 @@
+/* Comment */
+
+
+body {
+    background-color: rgb(238, 229, 200);
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+
+#overlay {
+
+    height: 100%;
+
+    width: 100%;
+    background-color: rgb(51, 204, 51, 0.5);
+
+}
+
+#button {
+
+    background-color: white;
+
+}
+
+#words {
+
+    background-color: white;
+
+    display: none;
+
+    width: 150px;
+
+    height: 150px;
+
+    position: absolute;
+
+    right: 500px;
+
+    top: 500px;
+}
+img {
+    height: 100px;
+}
