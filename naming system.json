@@ -43,7 +43,6 @@
             "explanation": "The css part of DHTML",
 
             "lesson/": {
-                "/base.css": "The base css file that every lesson uses",
                 "1.css...": "The css file used for each respective lesson. Note: Not every lesson needs a custom css file, these files could be useless"
             }
             

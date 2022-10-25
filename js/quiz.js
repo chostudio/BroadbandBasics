@@ -52,7 +52,7 @@ function update(questionNum) {
     currentQuestionNum = questionNum        
     options = Object.keys(answers[currentQuestionNum.toString()]['options'])
     let randomize = answers[currentQuestionNum]['randomize']
-    //randomize default value is true
+    //randomize's default value is true
     if (randomize === undefined || randomize)
         Utils.shuffle(options)
     
