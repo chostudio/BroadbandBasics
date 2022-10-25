@@ -23,14 +23,16 @@ var Bar = {
     },
 }
 Bar.setProgress(0)
-async function fetchAnswers(id) {
+async function fetchAnswers(chapter, lesson) {
     try {
-        const response = await fetch(`../answers/lesson_${id}.json`)
+        const response = await fetch(`../answers/chapter_${chapter}/lesson_${lesson}.json`)
         const exam = await response.json()
         return exam
     } catch (error) {
         //TODO maybe check for the error type (404)
-        window.location = "/page-not-found.html"
+        urlParams.set("lesson", "1")
+        urlParams.set("chapter", "1")
+        window.location.reload()
     }
 }
 
@@ -43,11 +45,19 @@ const urlParams = new URLSearchParams(window.location.search)
 const question = document.getElementById("question")
 const description = document.getElementById("description")
 
-const quizNumber = urlParams.get("quiz")
-if (quizNumber === null) {
-    window.location = "/page-not-found.html"
+const lessonNumber = urlParams.get("lesson")
+if (lessonNumber === null) {
+    urlParams.set("lesson", "1")
+    window.location.reload()
 }
-var answers = await fetchAnswers(quizNumber)
+
+const chapterNumber = urlParams.get("chapter")
+if (lessonNumber === null) {
+    urlParams.set("chapter", "1")
+    window.location.reload()
+}
+
+var answers = await fetchAnswers(chapterNumber, lessonNumber)
 var questions = Object.keys(answers).length
 var amountToUpdate = 100 / questions
 
@@ -74,7 +84,7 @@ function update(questionNum) {
             Utils.replaceButtonText(element, elementContents)
             element.style.visibility = "visible"
             //for the sake of D R Y
-            element.disabled = false
+            element.disabled = false  
         }
     })
         
