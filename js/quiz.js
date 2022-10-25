@@ -4,22 +4,25 @@ import * as Utilities from './utils.js'
 const Utils = Utilities.default
 var Bar = {
     element: document.getElementById("progressBar"),
-    
-    set progress(value) {
+    progress: 0,
+    targetProgress: 0,
+
+    setProgress(value) {
         this.element.style.width = value + "%"
+        this.progress = value
+        if (this.progress === 0) 
+            Bar.element.style.display = "none"
+        else
+            Bar.element.style.display = "block"
     },
-    set progressPercent(value) {
+    set width(value) {
         this.element.style.width = value
     },
-    get progressPercent() {
+    get width() {
         return this.element.style.width
     },
-    get progress() {
-        return this.element.style.width.slice(0, -1)
-    }
-
 }
-
+Bar.setProgress(0)
 async function fetchAnswers(id) {
     try {
         const response = await fetch(`../answers/lesson_${id}.json`)
@@ -63,7 +66,7 @@ function update(questionNum) {
 
     Array.from(document.getElementsByClassName('answerChoice')).forEach(element => {
         //TODO find a less stupid solution for getting the id of the button
-        let elementContents = options[element.id.substring(12)]
+        let elementContents = options[element.id.slice(-1)]
         if (elementContents === undefined) {
             element.style.visibility = "hidden"
             element.disabled = true
@@ -74,12 +77,8 @@ function update(questionNum) {
             element.disabled = false
         }
     })
-
-    if (Bar.progress === "") 
-        Bar.element.style.display = "none"
-    else
-        Bar.element.style.display = "block"
         
+    
 }
 update(0)
 
@@ -113,7 +112,8 @@ function selectAnswer(event) {
         console.log("incorrect!")
     }
     //TODO make animation
-    Bar.progress = (currentQuestionNum + 1) * amountToUpdate
+    Bar.targetProgress = (currentQuestionNum + 1) * amountToUpdate
+
     selectedAnswers.push(selectedOption)
 
     if (currentQuestionNum + 1 === questions) {
@@ -121,11 +121,14 @@ function selectAnswer(event) {
         console.log("FINISHED")
         //TODO display answers
         console.log(selectedAnswers)
-        //TODO exit
+        //TODO find better way to exit
         return
     } 
 
     update(currentQuestionNum + 1)
     
 }
-
+//There is probably a better way to do this
+setInterval(function() {
+    Bar.setProgress(Bar.progress + Math.ceil((Bar.targetProgress - Bar.progress) / 100 /* <<<< Increase to slow down */))
+}, 10)

@@ -2,6 +2,7 @@
     {
         "question": "True or False? If Broadband is paid for, you can always access it.",
         "description": "please add a description",
+        "randomize": false,
         "options": {
             "True": true,
             "False": false

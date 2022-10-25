@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BroadbandBasics Quiz</title>
-    <link rel="stylesheet" href="/css/quiz.css">
-    <script src="/js/quiz.js" type="module"></script>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BroadbandBasics Quiz</title>
+	<link rel="stylesheet" href="/css/quiz.css">
+	<script src="/js/quiz.js" type="module"></script>
+	<meta charset="UTF-8">
 </head>
 <body> 
 
+    <div id="overlay"></div>
+    <div id="progressBarBackground">
+        <div id="progressBar"></div>
 
-  <div id="overlay"></div>
-  <div id="progressBarBackground">
-    <div id="progressBar"></div>
-
+        <!-- Please do not rename anything
+        I did a stupid of somewhat hardcoding stuff and 
+        don't know how to get a better solution-->
 </div>
-  <p id="question">Question</p>
-  <!-- Not sure if we need this-->
-  <div id="description">words about question</div>
+<p id="question">Question</p>
+<!-- Not sure if we need this -->
+<div id="description">words about question</div>
 
-  <div class="options">
-    <!-- Please do not change the id name of the buttons,
-    I did a stupid of somewhat hardcoding stuff and 
-    don't know how to get a better solution-->
+    <div class="options">
+        <div class="answerBox">
+            <button class="answerChoice" id="answerChoice0" >Option 1</button>
+        </div>
+        <div class="answerBox">
+            <button class="answerChoice" id="answerChoice1" >Option 2</button>
+        </div>
+        <div class="answerBox">
+            <button class="answerChoice" id="answerChoice2" >Option 3</button>
+        </div>
+        <div class="answerBox">
+            <button class="answerChoice" id="answerChoice3" >Option 4</button>
+        </div>
+    </div>
 
-    <div class="answerBox">
-      <button class="answerChoice" id="answerChoice0" >Option 1</button>
-    </div>
-    <div class="answerBox">
-      <button class="answerChoice" id="answerChoice1" >Option 2</button>
-    </div>
-    <div class="answerBox">
-      <button class="answerChoice" id="answerChoice2" >Option 3</button>
-    </div>
-    <div class="answerBox">
-      <button class="answerChoice" id="answerChoice3" >Option 4</button>
-    </div>
-  </div>
+    <!-- Make dynamic -->
+    <a href="/lesson/how-the-internet-works.html">Click me to go back to lesson 1</a>
 
-  <!-- Make dynamic -->
-  <a href="/lesson/how-the-internet-works.html">Click me to go back to lesson 1</a>
-
-    
-   
+        
+     
 
 </body>
 </html>
