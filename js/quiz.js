@@ -38,6 +38,7 @@ var options = []
 var currentQuestionNum = 0
 const urlParams = new URLSearchParams(window.location.search)
 const question = document.getElementById("question")
+const description = document.getElementById("description")
 
 const quizNumber = urlParams.get("quiz")
 if (quizNumber === null) {
@@ -58,6 +59,7 @@ function update(questionNum) {
     
     console.log(`Question ${questionNum} with options`, options)
     question.textContent = answers[currentQuestionNum]['question']
+    description.textContent = answers[currentQuestionNum]['description']
 
     Array.from(document.getElementsByClassName('answerChoice')).forEach(element => {
         //TODO find a less stupid solution for getting the id of the button
