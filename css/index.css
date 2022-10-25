@@ -28,25 +28,16 @@ p {
 }
 
 #button {
-
     background-color: white;
-
 }
 
 #words {
-
     background-color: white;
-
     display: none;
-
     width: 150px;
-
     height: 150px;
-
     position: absolute;
-
     right: 500px;
-
     top: 500px;
 }
 img {

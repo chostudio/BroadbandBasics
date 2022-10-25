@@ -1,17 +1,10 @@
 Simple!
 
-"The question number": {
-    "option name": is it correct? (true or false)
-    repeat as many times as you want
-
-    WARNING: Program will probably not check if there is a correct option
-
-}
-
 Example:
 [
     {
         "question": "Correct?",
+        "description": "stuff",
         "randomize": false, //optional, default true
         options: {
             "incorrect 1": false,

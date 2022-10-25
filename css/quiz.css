@@ -7,9 +7,11 @@ body {
     padding: 0%;
     font: 1em sans-serif;
 }
-
-#button {
-    background-color: white;    
+#question {
+    font-size: x-large;
+}
+#description {
+    font-size: large;
 }
 /* treys code*/
 div.options {

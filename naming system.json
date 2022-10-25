@@ -28,21 +28,19 @@
         "answers/": {
             "explanation": "The folder to store the answers to the questions in the quiz",
             "naming": "Refer to the guide",
-            
             "/guide.txt": "the guide",
             "/lesson_1.json...": "A collection of files that contain the answers used in the quiz"
         },
         "assets/": {
             "explanation": "The folder to store assets",
-
             "images/": "The folder to store images",
             "other folders": "Self explanatory. Note: If you want to make a folder for a specific file type, you can"
         },
         
         "css/": {
             "explanation": "The css part of DHTML",
-
             "lesson/": {
+                "base.css": "The css file that every lesson page uses",
                 "1.css...": "The css file used for each respective lesson. Note: Not every lesson needs a custom css file, these files could be useless"
             }
             
@@ -57,13 +55,8 @@
                 "TODO FIND BETTER WAY TO DO THIS",
                 "NOTE: it has to be a module to import"
             ],
-            "lesson/": {
-                "/base.js": "The base js file that every lesson uses",
-                "/1.js": "The js file used for each respective lesson. Note: Not every lesson needs a custom js file, these files could be useless"
-            },
-
+            "/1.js": "The js file used for each respective lesson. Note: Not every lesson needs a custom js file, these files could be useless",
             "/require.js": "To add the require function, still not sure on how to do it -Alex"
-
         },
         "lesson": {
             "explanation": "The html part of DHTML",
@@ -73,8 +66,9 @@
         "/index.html": "T h e f i r s t",
         "quiz.html": "The quiz html file, will read the answers/lesson_x to ask questions",
         "/naming system.json": "Hey, look at me, Ma! (we don't talk about how it conflicts with the file naming rule)",
-        "/readme.md": "Haha funny message"
-        
-        
+        "/readme.md": "Haha funny message",
+        "/page-not-found": "The 404 page but currently does not work"
+
     }
 }
+
