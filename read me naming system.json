@@ -55,8 +55,10 @@
                 "TODO FIND BETTER WAY TO DO THIS",
                 "NOTE: it has to be a module to import"
             ],
-            "/1.js": "The js file used for each respective lesson. Note: Not every lesson needs a custom js file, these files could be useless",
-            "/require.js": "To add the require function, still not sure on how to do it -Alex"
+            "lesson/": {
+                "/base": "The base file for every lesson, should use module type",
+                "/1.js...": "The js file used for each respective lesson. Note: Not every lesson needs a custom js file, these files could be useless"
+            }
         },
         "lesson": {
             "explanation": "The html part of DHTML",

@@ -32,7 +32,14 @@ async function fetchAnswers(chapter, lesson) {
         //TODO maybe check for the error type (404)
         urlParams.set("lesson", "1")
         urlParams.set("chapter", "1")
-        window.location.reload()
+        window.location.search = urlParams.toString()
+        try {
+            const response = await fetch(`../answers/chapter_${chapter}/lesson_${lesson}.json`)
+            const exam = await response.json()
+            return exam
+        } catch (fileNotFound) {
+            console.error(fileNotFound)
+        }
     }
 }
 
@@ -41,20 +48,20 @@ var selectedAnswers = []
 var options = []
 
 var currentQuestionNum = 0
-const urlParams = new URLSearchParams(window.location.search)
+var urlParams = new URLSearchParams(window.location.search)
 const question = document.getElementById("question")
 const description = document.getElementById("description")
 
-const lessonNumber = urlParams.get("lesson")
+var lessonNumber = urlParams.get("lesson")
 if (lessonNumber === null) {
     urlParams.set("lesson", "1")
-    window.location.reload()
+    window.location.search = urlParams.toString()
 }
 
-const chapterNumber = urlParams.get("chapter")
-if (lessonNumber === null) {
+var chapterNumber = urlParams.get("chapter")
+if (chapterNumber === null) {
     urlParams.set("chapter", "1")
-    window.location.reload()
+    window.location.search = urlParams.toString()
 }
 
 var answers = await fetchAnswers(chapterNumber, lessonNumber)
@@ -102,7 +109,6 @@ function registerAnswerChoiceButton(number) {
     const button = document.getElementById(`answerChoice${number}`)
     button.addEventListener("click", selectAnswer)
     button.number = number
-
 }
 
 function selectAnswer(event) {
@@ -115,6 +121,7 @@ function selectAnswer(event) {
 
     if (answers[currentQuestionNum]['options'][selectedOption]) {
         //TODO display correct answer animation
+        document.getElementById("screen").style.animation = "correct 1s"
         console.log("correct!")
         
     } else {
@@ -141,4 +148,5 @@ function selectAnswer(event) {
 //There is probably a better way to do this
 setInterval(function() {
     Bar.setProgress(Bar.progress + Math.ceil((Bar.targetProgress - Bar.progress) / 100 /* <<<< Increase to slow down */))
+    
 }, 10)

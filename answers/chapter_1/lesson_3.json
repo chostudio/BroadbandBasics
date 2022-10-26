@@ -20,7 +20,7 @@
     {
         "question": "What does bps stand for?",
         "options": {
-            "Bytes per second": false,
+            "Bytes per second": true,
             "Beats per second": false,
             "Bits per second": false,
             "Bites per second": false

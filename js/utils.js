@@ -1,3 +1,4 @@
+"use strict";
 class Utils {
 
     static shuffle(array) {

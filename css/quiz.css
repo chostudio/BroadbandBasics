@@ -27,7 +27,7 @@ div.options {
     margin: auto;
 }
 div.answerBox {
-    width: 500px;
+    width: 400px;
     height: 200px;
     margin-right: 25px;
     margin-bottom: 25px;
@@ -64,4 +64,20 @@ button {
     height: 30px;
     background-color: green;
     border-radius: 50px;
+}
+#screen{
+    
+    bottom: 100%;
+    top: 100%;
+    left: 100%;
+    right: 100%;
+    size: 100%;
+}
+
+@keyframes correct{
+    from{display: none;}
+    to{
+        display:block;
+        color: green;
+    }
 }
