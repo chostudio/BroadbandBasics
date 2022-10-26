@@ -1,22 +1,22 @@
 /* Comment */
 
-.lesson1{
-    width: 200px;
-    height: 200px;
-    left: 50%;
-    transition: smolboy 1s;
-}
-.lesson1:hover{
-    animation: bigboy 1s;
+.lessons{
     width: 300px;
-    height: 300px;
+    height: 200px;
+    left: 2%;
+    position: relative;
+}
+.lessons:hover{
+    animation: bigboy 0.75s;
+    width: 400px;
+    height: 250px;
 }
 
 @keyframes bigboy{
-    from{width: 200px;
+    from{width: 300px;
         height: 200px;}
-    to{width: 300px;
-        height: 300px;}
+    to{width: 400px;
+        height: 250px;}
 }
 @keyframes smolboy{
     from{width: 300px;
