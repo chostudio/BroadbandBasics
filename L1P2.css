@@ -1,0 +1,34 @@
+
+
+#goBack{
+      padding: 20px;
+      width: 70px;
+      height: 30px;
+      background: red;
+      border-radius: 100px / 50px;
+
+}
+  
+
+#textBubble{
+      width: 150px;
+      height: 80px;
+      padding: 10px;
+      background: red;
+      position: relative;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+}
+#textBubble:before{
+      content: "";
+      position: absolute;
+      right: 100%;
+      top: 26px;
+      width: 0;
+      height: 0;
+      border-top: 13px solid transparent;
+      border-right: 26px solid red;
+      border-bottom: 13px solid transparent;
+}
+
