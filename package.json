@@ -1,0 +1,32 @@
+{
+  "name": "broadbandbasics",
+  "version": "1.0.0",
+  "description": "Broadband Basics App.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chostudio/BroadbandBasics.git"
+  },
+  "keywords": [
+    "boardband",
+    "basics",
+    "hacc"
+  ],
+  "author": "Dinuck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chostudio/BroadbandBasics/issues"
+  },
+  "homepage": "https://github.com/chostudio/BroadbandBasics#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "mongodb": "^4.11.0",
+    "nodemon": "^2.0.20",
+    "path": "^0.12.7"
+  }
+}
