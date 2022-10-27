@@ -1,0 +1,36 @@
+html{
+    background-color: #f8f5ed;
+  }
+  
+  p{
+    text-align: center;
+    font-family: 'Chakra Petch', sans-serif;
+  }
+  
+  p.a{
+    font-size: 27px;
+    font-family: 'Chakra Petch', sans-serif;
+  }
+  
+  p.b{
+    font-size: 20px;
+    position: relative;
+    top: -25px;
+    font-family: 'Chakra Petch', sans-serif;
+  }
+  
+  ul{
+    position: relative;
+    bottom: 40px;
+    font-family: 'Chakra Petch', sans-serif;
+  }
+
+  div{
+    font-family: 'Chakra Petch', sans-serif;
+  }
+
+  #happyDinuck{
+    height: 300px;
+    width: 300px;
+    transform: scaleX(-1);
+  }
