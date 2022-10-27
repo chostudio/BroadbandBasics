@@ -62,8 +62,56 @@ p {
 
 #button{
     cursor: pointer;
+    position: absolute;
+    display: none;
+    top: 125px;
+    left: 75px;
+    height: 250px;
+    width: 600px;
+    border-radius: 30px;
+    border: 6px solid;
+    border-color: rgb(255, 128, 128);
+    background-color: rgb(255, 179, 179);
 }
 
 #button2{
     cursor: pointer;
+    position: absolute;
+    display: none;
+    top: 125px;
+    right: 75px;
+    height: 250px;
+    width: 600px;
+    border-radius: 30px;
+    border: 6px solid;
+    border-color: rgb(26, 140, 255);
+    background-color: rgb(77, 166, 255);
+}
+
+#button3{
+    cursor: pointer;
+    position: absolute;
+    display: none;
+    bottom: 125px;
+    left: 75px;
+    height: 250px;
+    width: 600px;
+    border-radius: 30px;
+    border: 6px solid;
+    border-color: rgb(255, 163, 102);
+    background-color: rgb(255, 194, 153);
+}
+
+#button4{
+    cursor: pointer;
+    position: absolute;
+    display: none;
+    bottom: 125px;
+    right: 75px;
+    height: 250px;
+    width: 600px;
+    border-radius: 30px;
+    border: 6px solid;
+    border-color: rgb(255, 219, 77);
+    background-color: rgb(255, 230, 128);
 }
