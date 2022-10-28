@@ -1,0 +1,10 @@
+html{
+    background-color: #f8f5ed;
+}
+ul{
+    position: relative;
+    bottom: 160px;
+    font-family: 'Chakra Petch', sans-serif;
+    margin-left: 495px;
+    margin-right: 500px;
+}
