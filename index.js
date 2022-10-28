@@ -1,8 +1,42 @@
+
 const express = require('express');
 const path = require('path');
+const {MongoClient} = require('mongodb');
+
+const connectionString = 'mongodb+srv://maryknoll_admin:Cun5ip6rxQrwEyX3@cluster0.qkh31ex.mongodb.net/?retryWrites=true&w=majority';
 
 const app = express();
 const port = process.env.PORT || 8080;
+/*
+async function listDatabases(client){     
+    databasesList = await client.db().admin().listDatabases();     
+    console.log("Databases:");     
+    databasesList.databases.forEach(db => 
+        console.log(` - ${db.name}`
+    )); 
+};
+*/
+async function main() {
+    const client = new MongoClient(connectionString);
+try {     
+    await client.connect();     
+    console.log("connected!");
+    const db = client.db('BroadBand');    
+    const testResultsCollection = db.collection('TestResults');
+    const cursor = testResultsCollection.find().toArray().then(
+        results => {
+            console.log(results)    
+        }
+    ).catch(error => console.error(error))  
+    
+       
+    //await listDatabases(client); 
+} catch (e) {
+    console.error(e); 
+}
+}
+main().catch(console.error);
+
 
 // Serves all images from the assets folder
 app.use('/assets/images', express.static(__dirname + "/assets/images"));
