@@ -1,0 +1,55 @@
+body {
+    background-color: #F8F5ED;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#overlay {
+
+    height: 100%;
+
+    width: 100%;
+    background-color: rgb(51, 204, 51, 0.5);
+
+}
+
+#button {
+    background-color: white;
+    font-size: 500px;
+}
+
+#words {
+    background-color: white;
+    display: none;
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    right: 500px;
+    top: 500px;
+}
+
+img {
+    height: 100px;
+}
+
+.lessons {
+    border-radius: 10px;
+
+    transition: all .2s ease-in-out;
+    color: white;
+    width: 350px;
+    height: 100px;
+    position: relative;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.lessons:hover {
+    transform: scale(1.005);
+    width: 400px;
+    height: 100px;
+}
