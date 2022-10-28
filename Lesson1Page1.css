@@ -1,28 +1,39 @@
 html{
     background-color: #f8f5ed;
   }
-  
+
   p{
     text-align: center;
     font-family: 'Chakra Petch', sans-serif;
+  }
+
+  img{
+    position: relative;
+    left: 1230px;
+    height: 125px;
+    width: 156.25px;
   }
   
   p.a{
     font-size: 27px;
     font-family: 'Chakra Petch', sans-serif;
+    position: relative;
+    bottom: 120px;
   }
   
   p.b{
     font-size: 20px;
     position: relative;
-    top: -25px;
+    bottom: 145px;
     font-family: 'Chakra Petch', sans-serif;
   }
   
   ul{
     position: relative;
-    bottom: 40px;
+    bottom: 160px;
     font-family: 'Chakra Petch', sans-serif;
+    margin-left: 495px;
+    margin-right: 500px;
   }
 
   div{
@@ -33,4 +44,37 @@ html{
     height: 300px;
     width: 300px;
     transform: scaleX(-1);
+    position: relative;
+    left: 1150px;
+    bottom: 120px;
   }
+
+  .bubble {
+    position: relative;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    width: 150px;
+    background: #fff;
+    border-radius: 40px;
+    padding: 24px;
+    text-align: center;
+    color: #000;
+    bottom: 100px;
+    left: 1100px;
+  }
+  
+  .bubble-bottom-left:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 20px solid #fff;
+    border-right: 18px solid transparent;
+    border-top: 12px solid #fff;
+    border-bottom: 13px solid transparent;
+    right: 32px;
+    bottom: -24px;
+    transform: scaleX(-1);
+  }
+  
