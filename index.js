@@ -1,6 +1,7 @@
 
 const express = require('express');
 const path = require('path');
+
 const {MongoClient} = require('mongodb');
 
 const connectionString = 'mongodb+srv://maryknoll_admin:Cun5ip6rxQrwEyX3@cluster0.qkh31ex.mongodb.net/?retryWrites=true&w=majority';
@@ -16,26 +17,34 @@ async function listDatabases(client){
     )); 
 };
 */
-async function main() {
+app.use(express.urlencoded({ extended: true }));
+
+async function initDatabase() {
+    console.log("connecting...");
     const client = new MongoClient(connectionString);
-try {     
     await client.connect();     
     console.log("connected!");
     const db = client.db('BroadBand');    
     const testResultsCollection = db.collection('TestResults');
-    const cursor = testResultsCollection.find().toArray().then(
+
+    testResultsCollection.find().toArray().then(
         results => {
             console.log(results)    
         }
-    ).catch(error => console.error(error))  
+    ).catch(error => console.error(error));
     
-       
-    //await listDatabases(client); 
-} catch (e) {
-    console.error(e); 
+    app.post('/results', (req, res) => {
+        console.log(req.body)
+        testResultsCollection.insertOne(req.body)   
+        .then(result => {
+            console.log(result)
+        })
+        .catch(error => console.error(error))
+        
+    })
+
 }
-}
-main().catch(console.error);
+//initDatabase().catch(console.error);
 
 
 // Serves all images from the assets folder
@@ -50,6 +59,10 @@ app.use('/answers', express.static(__dirname + "/answers"));
 // Serves the index.html file
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '/index.html'));
+});
+
+app.get('/form.html', function(req, res) {
+    res.sendFile(path.join(__dirname, '/form.html'));
 });
 
 app.get('/quiz.html', function(req, res) {

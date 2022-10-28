@@ -44,13 +44,27 @@ async function fetchAnswers(chapter, lesson) {
 }
 
 //init variables
-var selectedAnswers = []
+var selectedAnswerNames = []
+var selectedAnswerBools = []
 var options = []
 
 var currentQuestionNum = 0
 var urlParams = new URLSearchParams(window.location.search)
+//elements
 const question = document.getElementById("question")
 const description = document.getElementById("description")
+
+const correctOverlay = document.getElementById('correctOverlay')
+const incorrectOverlay = document.getElementById('incorrectOverlay')
+const incorrectText = document.getElementById('incorrectText')
+const correctText = document.getElementById('correctText')
+
+const finishHeader = document.getElementById('finishHeader')
+const finishDescription = document.getElementById('finishDescription')
+const totalQuestions = document.getElementById('totalQuestions')
+const correctQuestions = document.getElementById('correctQuestions')
+const finishScore = document.getElementById('finishScore')
+
 
 var lessonNumber = urlParams.get("lesson")
 if (lessonNumber === null) {
@@ -111,6 +125,40 @@ function registerAnswerChoiceButton(number) {
     button.number = number
 }
 
+async function sendResults(correctIncorrect, names, score) {
+
+    let json = {
+        "correctIncorrect": correctIncorrect,
+        "answerNames": names,
+        score
+    }
+    console.log(json)
+    // Creating a XHR object
+    let xhr = new XMLHttpRequest();
+    let url = "/results";
+
+    // open a connection
+    xhr.open("POST", url, true);
+
+    // Set the request header i.e. which type of content you are sending
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    // Create a state change callback
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+
+            // Print received data from server
+            result.innerHTML = this.responseText;
+
+        }
+    };
+
+    // Converting JSON data to string
+    var data = JSON.stringify(json);
+    console.log(data)
+    // Sending data with the request
+    xhr.send(data);
+}
 function selectAnswer(event) {
     let selectedOption = options[event.currentTarget.number]
 
@@ -118,33 +166,71 @@ function selectAnswer(event) {
     Array.from(document.getElementsByClassName('answerChoice')).forEach(element => {
         element.disabled = true
     })
-
-    if (answers[currentQuestionNum]['options'][selectedOption]) {
+    let selectedAnswerCorrect = answers[currentQuestionNum]['options'][selectedOption]
+    selectedAnswerBools.push(selectedAnswerCorrect)
+    if (selectedAnswerCorrect) {
         //TODO display correct answer animation
-        document.getElementById("screen").style.animation = "correct 1s"
+        //document.getElementById("screen").style.animation = "correct 1s"
         console.log("correct!")
-        
+        incorrectOverlay.style.display = "none";
+        correctOverlay.style.display = "block";
+        correctText.style.display = "inline-block";
+
+        setTimeout(() => {
+            correctOverlay.style.display = "none";
+            correctText.style.display = "none";
+            
+        }, 1000);
     } else {
         //TODO display incorrect answer animation
         console.log("incorrect!")
+        correctOverlay.style.display = "none";
+        incorrectOverlay.style.display = "block";
+        incorrectText.style.display = "inline-block";
+
+        setTimeout(() => {
+            incorrectOverlay.style.display = "none";
+            incorrectText.style.display = "none";
+            
+        }, 1000);
     }
     //TODO make animation
     Bar.targetProgress = (currentQuestionNum + 1) * amountToUpdate
 
-    selectedAnswers.push(selectedOption)
+    selectedAnswerNames.push(selectedOption)
 
     if (currentQuestionNum + 1 === questions) {
         //finish
         console.log("FINISHED")
         //TODO display answers
-        console.log(selectedAnswers)
+        
+        let correctQuestions = 0
+        selectedAnswerBools.forEach(bool => {
+            if (bool)
+                correctQuestions += 1
+        })
+        let score = correctQuestions / questions
+
+        finishHeader.style.display = 'block'
+        finishDescription.style.display = 'block'
+        finishScore.textContent = score
+        
+
+
+
+        console.log(selectedAnswerBools, selectedAnswerNames, score)
+
+        sendResults(selectedAnswerBools, selectedAnswerNames, score)
+        
         //TODO find better way to exit
         return
     } 
-
-    update(currentQuestionNum + 1)
+    else
+        update(currentQuestionNum + 1)
     
 }
+
+
 //There is probably a better way to do this
 setInterval(function() {
     Bar.setProgress(Bar.progress + Math.ceil((Bar.targetProgress - Bar.progress) / 100 /* <<<< Increase to slow down */))
