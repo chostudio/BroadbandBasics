@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(238, 229, 200);
+    background-color: #F8F5ED;
     text-align: center;
 }
 
@@ -8,10 +8,6 @@ h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-p {
-    font-size: 16px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
 #overlay {
 
     height: 100%;
@@ -28,30 +24,31 @@ p {
 #words {
     background-color: white;
     display: none;
-    width: 150px;
+    width: 200px;
     height: 150px;
     position: absolute;
     right: 500px;
     top: 500px;
 }
+
 img {
     height: 100px;
 }
-.lessons{
+
+.lessons {
+    border-radius: 10px;
+
+    transition: all .5s ease-in-out;
+    color: white;
     width: 300px;
-    height: 200px;
-    left: 2%;
+    height: 100px;
     position: relative;
-}
-.lessons:hover{
-    animation: bigboy 0.75s;
-    width: 400px;
-    height: 250px;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-@keyframes bigboy{
-    from{width: 300px;
-        height: 200px;}
-    to{width: 400px;
-        height: 250px;}
+.lessons:hover {
+    transform: scale(1.005);
+    width: 400px;
+    height: 100px;
 }

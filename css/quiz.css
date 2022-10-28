@@ -2,17 +2,20 @@
 
 body {
     height: 100%;
-    width: 100%;
+    width: 95%;
     background-color: rgba(109, 210, 109, 0.5);
     padding: 0%;
     font: 1em sans-serif;
 }
+
 #question {
     font-size: x-large;
 }
+
 #description {
     font-size: large;
 }
+
 /* treys code*/
 div.options {
     width: 80%;
@@ -26,6 +29,7 @@ div.options {
     margin-top: 0px;
     margin: auto;
 }
+
 div.answerBox {
     width: 400px;
     height: 200px;
@@ -34,6 +38,7 @@ div.answerBox {
     margin-left: 25px;
     margin-top: 25px;
 }
+
 button {
     height: 100%;
     width: 100%;
@@ -45,10 +50,21 @@ button {
     font-family: 'Quantico', sans-serif;
 }
 
-#answerChoice0 { border: solid rgb(255, 173, 173) 10px; }
-#answerChoice1 { border: solid rgb(82, 113, 255) 10px; }
-#answerChoice2 { border: solid rgb(255, 172, 120) 10px; }
-#answerChoice3 { border: solid rgb(255, 222, 89) 10px; }
+#answerChoice0 {
+    border: solid rgb(255, 173, 173) 10px;
+}
+
+#answerChoice1 {
+    border: solid rgb(82, 113, 255) 10px;
+}
+
+#answerChoice2 {
+    border: solid rgb(255, 172, 120) 10px;
+}
+
+#answerChoice3 {
+    border: solid rgb(255, 222, 89) 10px;
+}
 
 #progressBarBackground {
     align-self: center;
@@ -58,6 +74,7 @@ button {
     border-radius: 50px;
     display: block;
 }
+
 #progressBar {
     align-self: center;
     width: 1%;
@@ -65,8 +82,9 @@ button {
     background-color: green;
     border-radius: 50px;
 }
-#screen{
-    
+
+#screen {
+
     bottom: 100%;
     top: 100%;
     left: 100%;
@@ -74,10 +92,13 @@ button {
     size: 100%;
 }
 
-@keyframes correct{
-    from{display: none;}
-    to{
-        display:block;
+@keyframes correct {
+    from {
+        display: none;
+    }
+
+    to {
+        display: block;
         color: green;
     }
 }
