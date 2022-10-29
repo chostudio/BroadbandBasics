@@ -25,7 +25,9 @@ async function initDatabase() {
     await client.connect();     
     console.log("connected!");
     const db = client.db('BroadBand');    
-    const testResultsCollection = db.collection('TestResults');
+    const testResultsCollection = db.collection('QuizResults');
+
+    //testResultsCollection.insertOne({"correctIncorrect":[false,false,false,false],"answerNames":["False","Online education","International Supplier Power","Costs money"],"score":0})
 
     testResultsCollection.find().toArray().then(
         results => {
@@ -34,7 +36,9 @@ async function initDatabase() {
     ).catch(error => console.error(error));
     
     app.post('/results', (req, res) => {
-        console.log(req.body)
+        //console.log(`Sent to database: ${req.body}`)
+        console.log(req)
+        //results of send
         testResultsCollection.insertOne(req.body)   
         .then(result => {
             console.log(result)
