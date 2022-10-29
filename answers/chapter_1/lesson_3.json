@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is a bit?",
+        "options": {
+            "A basic unit of information for computers": true,
+            "A basic unit for file size": false,
+            "A very small unit": false,
+            "Speed computer receives data": false
+        }
+    },
+    {
+        "question": "What is a byte?",
+        "options": {
+            "The speed a computer sends data": false,
+            "A basic unit of information for computers": false,
+            "A basic unit for file size": true,
+            "Measures network speed": false
+        }
+    },
+    {
+        "question": "What does bps stand for?",
+        "options": {
+            "Bytes per second": true,
+            "Beats per second": false,
+            "Bits per second": false,
+            "Bites per second": false
+        }
+    }
+
+]

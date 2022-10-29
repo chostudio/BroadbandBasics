@@ -1,0 +1,19 @@
+Simple!
+
+Example:
+[
+    {
+        "question": "Correct?",
+        "description": "stuff",
+        "randomize": false, //optional, default true
+        options: {
+            "incorrect 1": false,
+            "incorrect 2": false,
+            "incorrect 3": false,
+            "correct": true
+        }
+    }
+]
+
+
+JSON tutorial btw (will need in javascript): https://www.youtube.com/watch?v=iiADhChRriM
