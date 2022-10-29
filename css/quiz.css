@@ -131,3 +131,9 @@ button {
     display: none;
     /* position: absolute; */
 }
+
+#finish {
+    display: none;
+
+
+}
