@@ -126,7 +126,6 @@ function registerAnswerChoiceButton(number) {
 }
 
 async function sendResults(correctIncorrect, names, score) {
-
     let json = {
         "correctIncorrect": correctIncorrect,
         "answerNames": names,
@@ -155,7 +154,7 @@ async function sendResults(correctIncorrect, names, score) {
 
     // Converting JSON data to string
     var data = JSON.stringify(json);
-    console.log(data)
+    console.log(`Post sent data: ${data}`)
     // Sending data with the request
     xhr.send(data);
 }
@@ -213,7 +212,7 @@ function selectAnswer(event) {
 
         finishHeader.style.display = 'block'
         finishDescription.style.display = 'block'
-        finishScore.textContent = score
+        finishScore.textContent = score.toString()
         
 
 
