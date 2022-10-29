@@ -1,7 +1,7 @@
 [
     {
         "question": "True or False? If Broadband is paid for, you can always access it.",
-        "description": "please add a description",
+        "description": " ",
         "randomize": false,
         "options": {
             "True": true,
@@ -10,7 +10,7 @@
     },
     {
         "question": "Broadband provides access to all these services except for:",
-        "description": "please add a description",
+        "description": " ",
         "options": {
             "Telehealth": false,
             "Electricity": true,
@@ -20,7 +20,7 @@
     },
     {
         "question": "The term ISP stands for:",
-        "description": "please add a description",
+        "description": " ",
         "options": {
             "International Supplier Power": false,
             "International Studies Provider": false,
@@ -30,7 +30,7 @@
     },
     {
         "question": "Broadband is different from dial up internet service because Broadband",
-        "description": "please add a description",
+        "description": " ",
         "options": {
             "Has higher speed of data": true,
             "Provides internet access": false,
